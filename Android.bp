@@ -312,18 +312,6 @@ android_app_import {
     product_specific: true,
 }
 
-android_app_import {
-    name: "DeviceIntelligenceNetworkPrebuiltAstrea",
-    owner: "google",
-    apk: "proprietary/product/priv-app/DeviceIntelligenceNetworkPrebuiltAstrea/DeviceIntelligenceNetworkPrebuiltAstrea.apk",
-    preprocessed: true,
-    presigned: true,
-    dex_preopt: {
-        enabled: false,
-    },
-    privileged: true,
-    product_specific: true,
-}
 
 android_app_import {
     name: "DevicePersonalizationAiAiPrebuiltPixel2022",
@@ -414,17 +402,6 @@ android_app_import {
     product_specific: true,
 }
 
-android_app_import {
-    name: "TetheringEntitlement",
-    owner: "google",
-    apk: "proprietary/product/priv-app/TetheringEntitlement/TetheringEntitlement.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    privileged: true,
-    product_specific: true,
-}
 
 android_app_import {
     name: "WfcActivation",
@@ -7604,23 +7581,6 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-rust_prebuilt_dylib {
-    name: "libgpuflag_aconfig_rust",
-    owner: "google",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libgpuflag_aconfig_rust.dylib.so",
-            ],
-            shared_libs: [
-                "libc",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
 
 cc_prebuilt_library_shared {
     name: "libgril_oem-google",
@@ -9142,30 +9102,6 @@ sh_binary {
     soc_specific: true,
 }
 
-rust_prebuilt_binary {
-    name: "dump_modem",
-    owner: "google",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/dump/dump_modem",
-            ],
-            shared_libs: [
-                "libc",
-            ],
-            rustlibs: [
-                "libstd",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    relative_install_path: "dump",
-    soc_specific: true,
-}
 
 cc_prebuilt_binary {
     name: "dump_modemlog",
@@ -9407,32 +9343,6 @@ cc_prebuilt_binary {
     soc_specific: true,
 }
 
-rust_prebuilt_binary {
-    name: "gpuflag",
-    owner: "google",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/gpuflag",
-            ],
-            shared_libs: [
-                "libc",
-            ],
-            rustlibs: [
-                "libandroid_logger",
-                "librustutils",
-                "liblog_rust",
-                "libstd",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
 
 cc_prebuilt_binary {
     name: "android.hardware.authsecret-service.citadel",
